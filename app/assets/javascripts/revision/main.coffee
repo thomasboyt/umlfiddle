@@ -1,3 +1,6 @@
+$(".diagram").sequenceDiagram({theme: "hand"})
+$(".diagram").css("visibility", "visible")
+
 $ =>
   editor = ace.edit $(".editor")[0] 
   editor.getSession().setUseWrapMode(true);
@@ -37,5 +40,8 @@ $ =>
     )
   )
 
-$(".diagram").sequenceDiagram({theme: "hand"})
-$(".diagram").css("visibility", "visible")
+  # split view
+  $(".split-view").splitter(".editor-container", ".diagram-container", ".handle")
+
+  $(".split-view").on "split-resize", (e) =>
+    editor.resize()
