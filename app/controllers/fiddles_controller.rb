@@ -1,9 +1,5 @@
 class FiddlesController < ApplicationController
 
-  # view for /fiddles/new
-  def new
-  end
-
   # view for /fiddles/:id
   def show
     @fiddle = Fiddle.find(params[:id].to_s)

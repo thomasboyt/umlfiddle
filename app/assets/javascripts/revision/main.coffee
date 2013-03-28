@@ -22,11 +22,13 @@ $ =>
   $("#save").click((e) =>
     # this is kinda goofy, but better than getting id from rails
     match = window.location.pathname.match(/(.+\/v\/)/)
-    if match
-      retLocation = (data) => match[0] + data.num
-    else
+    if not match
       # if not on a :id/v/:num path, must be a new item
-      retLocation = (data) => "/fiddles" + data._id + "/v/1"
+      postUrl = "/fiddles"
+      retLocation = (data) => postUrl + "/" + data._id + "/v/1"
+    else
+      postUrl = match[0]
+      retLocation = (data) => postUrl + data.num
 
     $.post(postUrl, {
       content: editor.getValue()
