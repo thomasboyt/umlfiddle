@@ -11,6 +11,9 @@ Umlfiddle::Application.configure do
   # Disable Rails's static asset server (Apache or nginx will already do this)
   config.serve_static_assets = true
 
+  #config.assets.precompile += %w( style.css grid.css ... geo.js jquery.flexslider-min.js)  
+  config.assets.precompile += ["revisions.js"]
+
   # Compress JavaScripts and CSS
   config.assets.compress = true
 
