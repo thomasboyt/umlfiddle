@@ -12,7 +12,7 @@ Umlfiddle::Application.configure do
   config.serve_static_assets = true
 
   #config.assets.precompile += %w( style.css grid.css ... geo.js jquery.flexslider-min.js)  
-  config.assets.precompile += ["revisions.js"]
+  config.assets.precompile += ["revision.js"]
 
   # Compress JavaScripts and CSS
   config.assets.compress = true
