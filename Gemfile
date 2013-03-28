@@ -4,6 +4,7 @@ gem 'rails', '3.2.12'
 
 gem 'mongoid'
 gem 'bson_ext'
+gem 'mongoid_token', '~> 1.1.0'
 
 # Gems used only for assets and not required
 # in production environments by default.

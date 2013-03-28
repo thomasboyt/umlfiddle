@@ -2,7 +2,7 @@ class FiddlesController < ApplicationController
 
   # view for /fiddles/:id
   def show
-    @fiddle = Fiddle.find(params[:id].to_s)
+    @fiddle = Fiddle.find_by_token(params[:id].to_s)
     render :json => @fiddle
   end
 

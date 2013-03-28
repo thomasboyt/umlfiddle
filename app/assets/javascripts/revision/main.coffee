@@ -25,7 +25,7 @@ $ =>
     if not match
       # if not on a :id/v/:num path, must be a new item
       postUrl = "/fiddles"
-      retLocation = (data) => postUrl + "/" + data._id + "/v/1"
+      retLocation = (data) => postUrl + "/" + data.token + "/v/1"
     else
       postUrl = match[0]
       retLocation = (data) => postUrl + data.num

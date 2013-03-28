@@ -1,7 +1,7 @@
 class RevisionsController < ApplicationController
 
   def show
-    @fiddle = Fiddle.find(params[:fiddle_id].to_s)
+    @fiddle = Fiddle.find_by_token(params[:fiddle_id].to_s)
     @revision = @fiddle.revisions.where(num: params[:id].to_s)[0]
 
     respond_to do |format|
@@ -15,7 +15,7 @@ class RevisionsController < ApplicationController
   def create
     content = params[:content].to_s
 
-    @fiddle = Fiddle.find(params[:fiddle_id])
+    @fiddle = Fiddle.find_by_token(params[:fiddle_id])
 
     @revision = Revision.create!(
       content: content,
