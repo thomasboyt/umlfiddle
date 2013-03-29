@@ -41,7 +41,7 @@ $ =>
   )
 
   # split view
-  $(".split-view").splitter(".editor-container", ".diagram-container", ".handle")
+  $(".split-view").vsplit(".editor-container", ".diagram-container", ".handle")
 
   $(".split-view").on "split-resize", (e) =>
     editor.resize()
